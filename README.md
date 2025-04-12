@@ -1,5 +1,7 @@
 **Smart Assist Stick for the Visually Impaired**
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6bdc86a4-725f-4978-b6d0-c9fbad948e1e/deploy-status)](https://app.netlify.com/sites/assistick/deploys)
+
 **Objective:**
 Develop a walking stick that detects nearby obstacles, identifies objects, and provides audio feedback using vibration motors and voice output, enhancing mobility and safety for visually impaired individuals.
 
