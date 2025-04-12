@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Assist Stick for Visually Impaired</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .watermark {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 60px;
+            opacity: 0.5;
+        }
+        .fade-in {
+            animation: fadeInUp 1s ease-out;
+        }
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .feedback-box {
+            margin-top: 40px;
+            padding: 30px;
+            background: #34495e;
+            border-radius: 12px;
+        }
+        .feedback-box input,
+        .feedback-box textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        .feedback-box button {
+            width: 100%;
+        }
+    </style>
+    
+</head>
+<body>
+    <img src="C:\Users\satya\OneDrive\My stuff\School\India\DPS Newtown\Class X\Innovation club work\Icon.png" alt="Watermark Bulb" class="watermark">
+
+    <div class="container">
+        <header>
+            <h1><font color="001f3f">Smart Assist Stick for the Visually Impaired</font></h1>
+        </header>
+
+        <section>
+            <h2>Smart Stick Visual Overview</h2>
+            <img src="C:\Users\satya\Downloads\stick\Slide1.JPG" alt="Smart Stick Infographic">
+        </section>
+
+        <section>
+            <h2>Objective</h2>
+            <p>Develop a walking stick that detects nearby obstacles, identifies objects, and provides audio feedback using vibration motors and voice output.</p>
+        </section>
+
+        <section>
+            <h2>Core Feature Overview</h2>
+            <p>The smart assist stick combines various advanced technologies to improve mobility and safety for visually impaired individuals. Below is an elaboration of the integrated features.</p>
+
+            <ul>
+                <li><strong>Obstacle Detection</strong>: Ultrasonic sensors measure distance and activate internal vibration motors with increasing frequency as obstacles approach.</li>
+                <li><strong>Object Recognition</strong>: Pi Camera paired with MobileNet SSD enables object identification and classification into useful categories like human, pet, vehicle, etc.</li>
+                <li><strong>Voice Feedback</strong>: Recognized objects are announced using pre-recorded MP3s through an AUX-connected audio device.</li>
+                <li><strong>USB-C Charging</strong>: Fast, reliable power input via USB-C with easy compatibility.</li>
+                <li><strong>LED Battery Indicator</strong>: Five-segment LEDs show current charge status and blink during active charging.</li>
+                <li><strong>Internal Build</strong>: Vibration motors are embedded inside a hollow PVC stick, making the design sleek and wire-free externally.</li>
+                <li><strong>Pattern-based Vibration</strong>: Custom vibration signals give spatial and urgency-based context:
+                    <ul>
+                        <li>Fast Pulse – Danger close</li>
+                        <li>Slow Pulse – Distant object</li>
+                        <li>Left/Right Pulse – Directional cue</li>
+                        <li>Continuous Buzz – Path fully blocked</li>
+                    </ul>
+                </li>
+                <li><strong>GPS Tracking</strong>: Real-time location monitoring for caregivers via GPS module. Assists in rescue or navigation tracking.</li>
+                <li><strong>Emergency Button</strong>: Sends pre-set distress signals and GPS coordinates with one tap. Also triggers visual/audio alarms if needed.</li>
+                <li><strong>Fingerprint Authentication</strong>: Ensures only authorized users can operate and access core and emergency features securely.</li>
+                <li><strong>Gyroscope & Fall Detection</strong>: Integrated MPU6050 detects sudden falls or tilts and triggers automatic emergency alerts to caregivers.</li>
+                <li><strong>Solar charging</strong>: Integrated solar charging capabilies for extra power even during operation.</li>
+                <li><strong>Weather Alerts</strong>: Pulls real-time weather data to provide spoken warnings for rain, extreme heat, storms, or other harsh conditions.</li>
+                <li><strong>Step tracking</strong>: Has sensors to track physioloical and health stats such as distance, steps, heart rate and calories.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>User Manual</h2>
+            <ul>
+                <li><strong>Powering On</strong>: Charge via USB-C and hold the power button for 3 seconds to turn on.</li>
+                <li><strong>Fingerprint Unlock</strong>: Place your finger on the scanner to activate the system.</li>
+                <li><strong>Fingerprint Registration</strong>: New users can register fingerprints by placing finger 3 times when in setup mode.</li>
+                <li><strong>Navigation Mode</strong>: Begin walking. The stick will vibrate based on proximity and direction of obstacles.</li>
+                <li><strong>Audio Mode</strong>: Connect earphones to AUX jack. The stick announces recognized objects or environments.</li>
+                <li><strong>Charging</strong>: Connect to USB-C port. LED bars indicate charge level (1 to 5). All lights on = fully charged.</li>
+                <li><strong>Emergency Use</strong>: Press and hold the emergency button for 3 seconds to trigger alerts and send your GPS location.</li>
+                <li><strong>Shutdown</strong>: Hold power button again for 3 seconds to switch off.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Workflow</h2>
+            <h3>1. Obstacle Detection</h3>
+            <ul>
+                <li>Use ultrasonic sensors to detect objects within a set distance.</li>
+                <li>Trigger vibration motors with increasing intensity as the object approaches.</li>
+                <li>Use pattern variation to indicate direction and urgency.</li>
+            </ul>
+
+            <h3>2. Object Detection</h3>
+            <ul>
+                <li>Capture images with Pi Camera.</li>
+                <li>Use MobileNet SSD to identify objects (e.g., person, dog, car).</li>
+                <li>Match high-confidence objects with pre-defined categories.</li>
+            </ul>
+
+            <h3>3. Voice Output</h3>
+            <ul>
+                <li>Play corresponding MP3 messages for recognized objects.</li>
+                <li>Use AUX output to speaker or earphones.</li>
+                <li>Prevent repeated or overlapping messages.</li>
+            </ul>
+
+            <h3>4. Emergency Function</h3>
+            <ul>
+                <li>When emergency button is pressed, alert is sent via Wi-Fi/GSM module.</li>
+                <li>Optionally play alert sound and blink LED indicator.</li>
+                <li>Share GPS location with emergency contact.</li>
+            </ul>
+
+            <h3>5. Fingerprint Access</h3>
+            <ul>
+                <li>Authenticate the user before enabling main features.</li>
+                <li>Register fingerprints securely using setup mode.</li>
+                <li>Ensure only the registered person can activate emergency or tracking features.</li>
+            </ul>
+
+
+            <h3>6. Fall Detection</h3>
+            <ul>
+                <li>Use gyroscope and accelerometer data to detect sudden falls.</li>
+                <li>Trigger emergency alert if a fall is detected.</li>
+                <li>Provide audio feedback to the user about the fall.</li>
+                <li>Log fall incidents for future reference.</li>
+            </ul>
+
+            <h3>7. Charging</h3>
+            <ul>
+                <li>Use USB-C for charging the device.</li>
+                <li>LED indicators show battery status (1-5 bars).</li>
+                <li>Automatically switch to low-power mode when battery is low.</li>
+                <li>Provide audio feedback when charging is complete.</li>
+                <li>Use a power bank or Li-ion battery pack for extended usage.</li>
+                <li>Solar charging options for outdoor use.</li>
+            </ul>
+
+            <h3>8. GPS and Weather alerts</h3>
+            <ul>
+                <li>Use GPS module to track location and provide real-time updates.</li>
+                <li>Fetch weather data using API and provide alerts for extreme conditions.</li>
+                <li>Log location data for future reference.</li>
+                <li>Provide audio feedback about the current weather conditions.</li>
+            </ul>
+
+            <h3>9. Audio mode</h3>
+            <ul>
+                <li>Connect earphones to the AUX jack.</li>
+                <li>Provide audio feedback about recognized objects and obstacles.</li>
+                <li>Prevent overlapping audio messages.</li>
+                <li>Provide volume control options.</li>
+            </ul>
+
+            <h3>10. Step tracking</h3>
+            <ul>
+                <li>Use sensors to track steps and distance.</li>
+                <li>Provide audio feedback about the number of steps taken.</li>
+                <li>Log health data for future reference.</li>
+                <li>Provide options to set daily step goals.</li>
+                <li>Integrate with health apps for better tracking.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Hardware Requirements</h2>
+            <ul>
+                <li>Raspberry Pi 4</li>
+                <li>Pi Camera Module v2</li>
+                <li>Ultrasonic Sensors (HC-SR04) × 2-3</li>
+                <li>Vibration Motors × 5–10 (placed inside the hollow stick)</li>
+                <li>L298N Motor Driver or Transistors</li>
+                <li>Speaker or Earphones (AUX)</li>
+                <li>LEDs × 5 (for battery status)</li>
+                <li>USB-C Charging Module</li>
+                <li>Power Bank / Li-ion Battery Pack</li>
+                <li>GPS Module (e.g., NEO-6M)</li>
+                <li>Emergency Push Button Switch</li>
+                <li>Fingerprint Sensor Module (e.g., R307)</li>
+                <li>Gyroscope + Accelerometer Module (e.g., MPU6050)</li>
+                <li>PVC pipe / actual walking stick</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Software Requirements</h2>
+            <ul>
+                <li>Raspberry Pi OS (Lite)</li>
+                <li>Python 3</li>
+                <li>OpenCV</li>
+                <li>TensorFlow Lite / MobileNet</li>
+                <li>pygame or omxplayer</li>
+                <li>gpsd and gpsd-clients (for GPS)</li>
+                <li>Adafruit Fingerprint Library (for sensor)</li>
+                <li>MPU6050 Python library (for fall detection)</li>
+                <li>Weather API integration (e.g., OpenWeatherMap API)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Extended Features & Optional Upgrades</h2>
+            <ul>
+                <li>AI-powered voice assistant for more interactivity with contextual feedback.</li>
+                <li>Advanced fall detection with timed voice response and auto-alert countdown.</li>
+                <li>Mobile app integration to monitor battery, location, and emergency logs remotely.</li>
+                <li>Real-time cloud dashboard for caregiver access, logs, and map overlays.</li>
+                <li>Night navigation lights using ambient light sensors to enable low-light usability.</li>
+                <li>Smart terrain classification using pressure and tilt sensors to detect steps, slopes, and water patches.</li>
+                <li>Adjustable vibration intensity and customizable patterns from an external app.</li>
+                <li>Voice-controlled emergency contact dialing using smart assistant APIs (Google/Siri).</li>
+            </ul>
+        </section>
+    </div>
+    <div class="feedback-box">
+        <h2>We Value Your Feedback</h2>
+        <form action="https://formspree.io/f/mqapnpbj" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Enter your feedback here..." required></textarea>
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </div>
+    <div class="author-details">
+        <h2>Author Details</h2>
+        <p><strong>Satyaki Bandopadhyay</strong></p>
+        <p>Class 10-E</p>
+        <p>Designed by Satyaki Bandopadhyay</p>
+        <p>Website development made with AI</p>
+        <p>Form automation with Formspree</p>
+    </div>
+</body>
+</html>
